@@ -32,12 +32,12 @@ export const Samples = () => {
     }
 
     const handleCellChange = (
-        index: number,
+        sampleId: string,
         field: keyof SampleRowCalculated,
         value: number
     ) => {
-        const updated = rows.map((row, i) =>
-            i === index ? { ...row, [field]: value } : row
+        const updated = rows.map((row) =>
+            row.sampleId === sampleId ? { ...row, [field]: value } : row
           );
         if (autoRecalculate) {
             setRows(calculateAllRows(updated));
@@ -146,7 +146,7 @@ export const Samples = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {sortedRows.map((row, index) => (
+                    {sortedRows.map((row) => (
                         <TableRow key={row.sampleId}>
                             <TableCell>{row.sampleId}</TableCell>
                             <TableCell>
@@ -154,7 +154,7 @@ export const Samples = () => {
                                     type="number"
                                     value={row.moisture}
                                     onChange={(e) =>
-                                        handleCellChange(index, "moisture", Number(e.target.value))
+                                        handleCellChange(row.sampleId, "moisture", Number(e.target.value))
                                     }
                                 />
                             </TableCell>
@@ -165,7 +165,7 @@ export const Samples = () => {
                                     value={row.dryDensity}
                                     onChange={(e) =>
                                         handleCellChange(
-                                            index,
+                                            row.sampleId,
                                             "dryDensity",
                                             Number(e.target.value)
                                         )
@@ -179,7 +179,7 @@ export const Samples = () => {
                                     value={row.correctionFactor}
                                     onChange={(e) =>
                                         handleCellChange(
-                                            index,
+                                            row.sampleId,
                                             "correctionFactor",
                                             Number(e.target.value)
                                         )
@@ -192,7 +192,7 @@ export const Samples = () => {
                                     type="number"
                                     value={row.porosity}
                                     onChange={(e) =>
-                                        handleCellChange(index, "porosity", Number(e.target.value))
+                                        handleCellChange(row.sampleId, "porosity", Number(e.target.value))
                                     }
                                 />
                             </TableCell>
