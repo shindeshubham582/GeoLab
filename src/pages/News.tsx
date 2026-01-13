@@ -1,9 +1,12 @@
+import { useState } from "react"
 import styled from "@emotion/styled";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react"
-import { fetchNews } from "../services/newsApi";
-import { useDebounce } from "../components/useDebounce";
+
 import { TileAccordion } from "../components/TileAccordion";
+
+import { useDebounce } from "../components/useDebounce";
+
+import { fetchNews } from "../services/newsApi";
 
 const Container = styled.div`
     display: flex;
@@ -57,16 +60,12 @@ export const News = () => {
     }
 
     const { data = [], isLoading, error } = useQuery({
-        queryKey: ["news", country, debouncedSearch], // Ensure queryKey includes the dynamic values
-        queryFn: () => fetchNews(country, debouncedSearch), // Pass the updated values to fetchNews
+        queryKey: ["news", country, debouncedSearch],
+        queryFn: () => fetchNews(country, debouncedSearch),
         enabled: debouncedSearch.trim().length > 0,
         staleTime: 1000 * 60 * 1,
         gcTime: 1000 * 60 * 2,
     });
-
-      useEffect(() => {
-        console.log(country, searchQuery, data);
-      }, [country, searchQuery, data]);
 
     return <div>
         <h2>Geo News</h2>
@@ -103,7 +102,6 @@ export const News = () => {
                 setOpenArticleId={(id: null | string) => {setOpenArticleId(id)}}/>
             }
             )}
-            {searchQuery.length !== 0 && data.length === 0 && <p>No News Found</p>}
         </NewsContainer>
     </div>
 }
