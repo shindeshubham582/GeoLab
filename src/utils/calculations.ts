@@ -26,9 +26,13 @@ export const calculateSummary = (rows: SampleRowCalculated[]) => {
     const avgDensity =
         rows.reduce((sum, r) => sum + r.adjustedDensity, 0) / totalSamples || 0;
 
+    const avgPorosity =
+        rows.reduce((sum, r) => sum + r.porosity, 0) / totalSamples || 0;
+
     return {
         totalSamples,
         avgMoisture: Number(avgMoisture.toFixed(2)),
         avgDensity: Number(avgDensity.toFixed(2)),
+        avgPorosity: Number(avgPorosity.toFixed(2)),
     };
 };

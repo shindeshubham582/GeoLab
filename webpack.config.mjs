@@ -11,6 +11,7 @@ export default {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    publicPath: "/GeoLab/",
     clean: true
   },
 
