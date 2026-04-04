@@ -47,30 +47,12 @@
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
   }
-`,zn=(Bn.button`
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer;
-
-  &:hover {
-    background: #667eea;
-    color: white;
-    transform: translateY(-2px);
-  }
-`,Bn.section`
+`,zn=Bn.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-bottom: 60px;
-`),Kn=Bn.div`
+`,Kn=Bn.div`
   background: white;
   padding: 30px;
   border-radius: 15px;
