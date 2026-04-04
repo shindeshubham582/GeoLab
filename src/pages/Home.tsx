@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { BarChart3, Newspaper, Download, Zap, Code, Database } from "lucide-react";
+import { BarChart3, Newspaper, Download, Zap, Code, Database, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
@@ -161,6 +161,98 @@ const TechBadge = styled.div`
   border: 1px solid #667eea;
 `;
 
+const ProjectsSection = styled.section`
+  margin: 60px 0;
+
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+`;
+
+const ProjectGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+`;
+
+const ProjectCard = styled.a`
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2);
+
+    .project-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+  }
+`;
+
+const ProjectHeader = styled.div`
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  min-height: 80px;
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+  }
+
+  svg {
+    color: #667eea;
+    flex-shrink: 0;
+  }
+`;
+
+const ProjectBody = styled.div`
+  padding: 20px 30px 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+
+    span {
+      display: inline-block;
+      background: #f0f0f0;
+      color: #667eea;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+`;
+
 export const Home = () => {
   return (
     <Container>
@@ -250,6 +342,52 @@ export const Home = () => {
           </StatCard>
         </StatsGrid>
       </StatsSection>
+
+      <ProjectsSection>
+        <h2>Featured Projects</h2>
+        <ProjectGrid>
+          <ProjectCard href="/" title="GeoLab - Geospatial Analysis Platform">
+            <ProjectHeader as="div" className="project-header">
+              <h3>GeoLab</h3>
+              <ExternalLink size={24} />
+            </ProjectHeader>
+            <ProjectBody>
+              <p>
+                A professional platform for geospatial data analysis with CSV processing, real-time environmental news tracking, and interactive data visualizations.
+              </p>
+              <div className="project-tech">
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>Recharts</span>
+                <span>Material-UI</span>
+              </div>
+            </ProjectBody>
+          </ProjectCard>
+
+          <ProjectCard
+            href="https://shindeshubham582.github.io/React_Profile_search/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="React Profile Search - GitHub User Search"
+          >
+            <ProjectHeader as="div" className="project-header">
+              <h3>Profile Search</h3>
+              <ExternalLink size={24} />
+            </ProjectHeader>
+            <ProjectBody>
+              <p>
+                A React application for searching and exploring GitHub user profiles. View user repositories, follow statistics, and detailed account information with a modern UI.
+              </p>
+              <div className="project-tech">
+                <span>React</span>
+                <span>GitHub API</span>
+                <span>Responsive Design</span>
+                <span>Search</span>
+              </div>
+            </ProjectBody>
+          </ProjectCard>
+        </ProjectGrid>
+      </ProjectsSection>
 
       <TechStack>
         <h2>Built With Modern Technologies</h2>
