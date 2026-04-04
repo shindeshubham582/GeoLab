@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 import styled from "@emotion/styled";
 import { Home } from "./pages/Home";
 import { Samples } from "./pages/Samples";

@@ -1,14 +1,14 @@
 import { useMemo, useState, useRef } from "react";
 import styled from "@emotion/styled";
-import { 
-  Alert, Box, Button, Checkbox, FormControlLabel, Paper, Stack, 
-  Table, TableBody, TableCell, TableContainer, TableHead, TableRow, 
-  TableSortLabel, TextField, Typography, CircularProgress 
+import {
+  Alert, Box, Checkbox, FormControlLabel, Paper,
+  Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
+  TableSortLabel, TextField, Typography, CircularProgress
 } from "@mui/material";
-import { 
-  LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, 
-  Tooltip, Legend, ResponsiveContainer, ScatterChart, Scatter, 
-  ComposedChart, Area, AreaChart 
+import {
+  LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid,
+  Tooltip, Legend, ResponsiveContainer, ScatterChart, Scatter,
+  Area, AreaChart
 } from "recharts";
 import { Download, FileJson, Trash2, Upload } from "lucide-react";
 
@@ -446,7 +446,7 @@ export const Samples = () => {
         <InfoBox>
           <h4>📋 CSV Format Guide</h4>
           <p>
-            Your CSV file should include these columns: <code>sampleId</code>, <code>moisture</code>, 
+            Your CSV file should include these columns: <code>sampleId</code>, <code>moisture</code>,
             <code>dryDensity</code>, <code>correctionFactor</code>, <code>porosity</code>
           </p>
           <ul>

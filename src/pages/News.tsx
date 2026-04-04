@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import styled from "@emotion/styled";
 import { useQuery } from "@tanstack/react-query";
-import { Skeleton, CircularProgress, Chip, Grid, Box, TextField } from "@mui/material";
+import { Skeleton, Box, TextField } from "@mui/material";
 import { ExternalLink, Flame, Calendar } from "lucide-react";
 
 import { useDebounce } from "../components/useDebounce";

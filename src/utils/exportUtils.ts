@@ -24,11 +24,11 @@ export const exportToCSV = (data: SampleRowCalculated[], filename: string = "dat
   const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
   const link = document.createElement("a");
   const url = URL.createObjectURL(blob);
-  
+
   link.setAttribute("href", url);
   link.setAttribute("download", filename);
   link.style.visibility = "hidden";
-  
+
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -62,7 +62,7 @@ export const exportTableToPDF = async (
     // Add image
     const imgWidth = pdf.internal.pageSize.getWidth() - 20;
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
-    
+
     pdf.addImage(imgData, "PNG", 10, 30, imgWidth, imgHeight);
     pdf.save(filename);
   } catch (err) {
@@ -76,11 +76,11 @@ export const downloadJSON = (data: object, filename: string = "data.json") => {
   const blob = new Blob([jsonString], { type: "application/json" });
   const link = document.createElement("a");
   const url = URL.createObjectURL(blob);
-  
+
   link.setAttribute("href", url);
   link.setAttribute("download", filename);
   link.style.visibility = "hidden";
-  
+
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

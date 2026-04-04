@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { ArrowRight, BarChart3, Newspaper, Download, Zap, Code, Database } from "lucide-react";
+import { BarChart3, Newspaper, Download, Zap, Code, Database } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
@@ -62,25 +62,7 @@ const Button = styled(Link)`
   }
 `;
 
-const SecondaryButton = styled.button`
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer;
 
-  &:hover {
-    background: #667eea;
-    color: white;
-    transform: translateY(-2px);
-  }
-`;
 
 const FeaturesGrid = styled.section`
   display: grid;
